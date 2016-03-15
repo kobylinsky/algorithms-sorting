@@ -1,9 +1,10 @@
 package com.kobylinsky.algorithms.sorting;
 
 /**
- * Created by bogdankobylinsky on 3/15/16.
+ * @author bogdankobylinsky
  */
 public interface Sort {
 
-    <T> T[] sort(T[] arr);
+    <T extends Comparable<T>> void sort(T[] array);
+
 }

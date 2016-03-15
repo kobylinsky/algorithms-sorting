@@ -1,7 +1,7 @@
 package com.kobylinsky.algorithms.sorting;
 
 /**
- * Created by bogdankobylinsky on 3/15/16.
+ * @author bogdankobylinsky
  */
 public class SortingUtils {
 
