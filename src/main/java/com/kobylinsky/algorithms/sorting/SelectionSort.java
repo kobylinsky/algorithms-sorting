@@ -2,7 +2,7 @@ package com.kobylinsky.algorithms.sorting;
 
 /**
  * Selection sort.
- * <p/>
+ * <p>
  * One of the simplest sorting algorithms works as follows:
  * First, find the smallest item in the array, and exchange it with the first entry.
  * Then, find the next smallest item and exchange it with the second entry.
@@ -15,6 +15,14 @@ public class SelectionSort implements Sort {
 
     @Override
     public <T extends Comparable<T>> void sort(final T[] array) {
-
+        for (int i = 0; i < array.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (SortingUtils.less(array[j], array[minIndex])) {
+                    minIndex = j;
+                }
+            }
+            SortingUtils.swap(array, i, minIndex);
+        }
     }
 }

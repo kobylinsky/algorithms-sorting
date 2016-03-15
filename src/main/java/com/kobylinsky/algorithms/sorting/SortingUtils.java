@@ -11,4 +11,8 @@ public class SortingUtils {
         arr[i2] = temp;
     }
 
+    public static <T extends Comparable<T>> boolean less(T e1, T e2) {
+        return e1.compareTo(e2) < 0;
+    }
+
 }
