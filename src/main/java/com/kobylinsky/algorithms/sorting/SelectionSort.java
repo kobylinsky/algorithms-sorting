@@ -15,14 +15,20 @@ public class SelectionSort implements Sort {
 
     @Override
     public <T extends Comparable<T>> void sort(final T[] array) {
+        int compares = 0;
+        int exchanges = 0;
         for (int i = 0; i < array.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < array.length; j++) {
                 if (SortingUtils.less(array[j], array[minIndex])) {
                     minIndex = j;
                 }
+                compares++;
             }
             SortingUtils.swap(array, i, minIndex);
+            exchanges++;
         }
+        System.out.printf("Compares for %d-size array: %d %n", array.length, compares);
+        System.out.printf("Exchanges for %d-size array: %d %n", array.length, exchanges);
     }
 }

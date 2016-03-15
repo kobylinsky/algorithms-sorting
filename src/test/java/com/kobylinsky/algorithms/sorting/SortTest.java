@@ -26,7 +26,7 @@ public class SortTest {
                 { new Integer[]{0} },
                 { new Integer[]{0, 1} },
                 { new Integer[]{0, 0, 0, 0, 0} },
-                { newRandomArray(10) },
+                { newRandomArray(100) },
         });
     }
 
