@@ -20,13 +20,13 @@ public class SelectionSort implements Sort {
         for (int i = 0; i < array.length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < array.length; j++) {
+                compares++;
                 if (SortingUtils.less(array[j], array[minIndex])) {
                     minIndex = j;
                 }
-                compares++;
             }
-            SortingUtils.swap(array, i, minIndex);
             exchanges++;
+            SortingUtils.swap(array, i, minIndex);
         }
         System.out.printf("Compares for %d-size array: %d %n", array.length, compares);
         System.out.printf("Exchanges for %d-size array: %d %n", array.length, exchanges);

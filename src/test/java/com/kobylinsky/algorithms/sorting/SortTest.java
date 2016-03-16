@@ -44,7 +44,23 @@ public class SortTest {
 
         // When
         selectionSort.sort(testArray);
-        System.out.println("Actual: " + Arrays.toString(testArray));
+        System.out.println("Sorted: " + Arrays.toString(testArray));
+
+        // Then
+        assertArrayEquals(expected, testArray);
+    }
+
+    @Test
+    public void testInsertionSort() {
+        // Given
+        final Sort selectionSort = new InsertionSort();
+        System.out.println("Initial: " + Arrays.toString(testArray));
+        final Integer[] expected = getProperlySortedArray(testArray);
+        System.out.println("Expected: " + Arrays.toString(expected));
+
+        // When
+        selectionSort.sort(testArray);
+        System.out.println("Sorted: " + Arrays.toString(testArray));
 
         // Then
         assertArrayEquals(expected, testArray);
