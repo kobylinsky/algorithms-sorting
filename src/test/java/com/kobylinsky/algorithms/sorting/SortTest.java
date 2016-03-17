@@ -66,6 +66,22 @@ public class SortTest {
         assertArrayEquals(expected, testArray);
     }
 
+    @Test
+    public void testShellSort() {
+        // Given
+        final Sort selectionSort = new ShellSort();
+        System.out.println("Initial: " + Arrays.toString(testArray));
+        final Integer[] expected = getProperlySortedArray(testArray);
+        System.out.println("Expected: " + Arrays.toString(expected));
+
+        // When
+        selectionSort.sort(testArray);
+        System.out.println("Sorted: " + Arrays.toString(testArray));
+
+        // Then
+        assertArrayEquals(expected, testArray);
+    }
+
     private static Integer[] newRandomArray(final int size) {
         final Random random = new Random();
         final Integer[] array = new Integer[size];

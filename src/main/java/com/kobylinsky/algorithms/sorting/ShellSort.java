@@ -21,6 +21,24 @@ public class ShellSort implements Sort {
         int compares = 0;
         int exchanges = 0;
 
+        int h = 1;
+        while (h * 3 < array.length) {
+            h = h * 3 + 1;
+        }
+
+        while (h >= 1) {
+            for (int i = h; i < array.length; i++) {
+                for (int j = i; j >= h; j -= h) {
+                    compares++;
+                    if (SortingUtils.less(array[j], array[j - h])) {
+                        exchanges++;
+                        SortingUtils.swap(array, j, j - h);
+                    }
+                }
+            }
+            h /= 3;
+        }
+
         System.out.printf("Compares for %d-size array: %d %n", array.length, compares);
         System.out.printf("Exchanges for %d-size array: %d %n", array.length, exchanges);
     }
